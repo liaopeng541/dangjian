@@ -43,7 +43,7 @@ sagaMiddleware.run(watch)
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar backgroundColor={"rgba(0,0,0,0)"} translucent={true}/>
       <Provider store={store}>
         <RouteNavigator />
       </Provider>

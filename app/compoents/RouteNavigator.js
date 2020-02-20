@@ -5,23 +5,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
-import Home from "../pages/Home"
+import YangGuangDangJian from "../pages/YangGuangDangJian"
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import YiShiXingTai from "../pages/YiShiXingTai"
+import ZhuanTiZhuanLang from "../pages/ZhuanTiZhuanLang"
+import DangFengLianZheng from "../pages/DangFengLianZheng"
+import JinZhunFuPing from "../pages/JinZhunFuPing"
 
 const Tab = createBottomTabNavigator();
 
@@ -29,8 +18,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="阳光党建" component={YangGuangDangJian} />
+        <Tab.Screen name="意识形态" component={YiShiXingTai} />
+        <Tab.Screen name="党风廉政" component={DangFengLianZheng} />
+        <Tab.Screen name="精准扶贫" component={JinZhunFuPing} />
+        <Tab.Screen name="专题专栏" component={ZhuanTiZhuanLang} />
       </Tab.Navigator>
     </NavigationContainer>
   );
