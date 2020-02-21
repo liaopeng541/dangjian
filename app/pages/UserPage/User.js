@@ -65,7 +65,8 @@ class Home extends Component {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={{paddingBottom: 100, backgroundColor: "#E3E3E3"}}>
-              <View style={{
+              <View
+                style={{
                 height: 100,
                 backgroundColor: "#484A54",
                 paddingLeft: 19,
@@ -302,7 +303,6 @@ class Home extends Component {
                   </View>
                   <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
                     <Text style={{fontSize: 16, color: "#999999"}}>
-
                     </Text>
                     <Image style={{height: 13, width: 13, marginLeft: 5}}
                            source={require('../../assets/images/other/right.png')}
