@@ -18,15 +18,15 @@ import TuWen from "../tabPage/ZhiHuiDangJian/TuWen"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 
 const {height, width} = Dimensions.get('window');
-
+import NavBar from "../Cell/NavBar/NavBar"
 class ZhiHuiDangJianListPage extends Component {
   constructor(props) {
     super(props);
     this.state ={
       index: 0,
       routes: [
-        { key: '100', title: '栏目文章' },
-        { key: '200', title: '栏目图文' },
+        { key: '100', title: '图文' },
+        { key: '200', title: '文章' },
       ]
     };
   }
@@ -39,9 +39,9 @@ class ZhiHuiDangJianListPage extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <WengZhang/>;
+        return <TuWen {...this.props}/>;
       case '200':
-        return <TuWen/>;
+        return <WengZhang {...this.props}/>;
     }
   }
 
@@ -69,29 +69,12 @@ class ZhiHuiDangJianListPage extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
-
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>智慧党建</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}>我的</Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../assets/images/nav/user.png')}
-                />
-              </View>
-            </View>
-          </View>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"智慧党建"}
+            rightImage={require('../../assets/images/user/more.png')}
+          />
           <View style={{height:56,alignItems:"center",justifyContent:"center",paddingLeft:15,paddingRight:15}}>
             <View style={{height:36,backgroundColor:"#ffffff",borderRadius:5,width:"100%",alignItems:"center",justifyContent:"center"}}>
               <Text style={{fontSize:16,color:"#455154"}}>
@@ -100,12 +83,9 @@ class ZhiHuiDangJianListPage extends Component {
 
             </View>
           </View>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
             <View style={{paddingBottom: 100, backgroundColor: "#E3E3E3"}}>
 
-              <View style={{backgroundColor: "#ffffff"}}>
+              <View style={{backgroundColor: "#ffffff",height:height-90}}>
 
                 <TabView
                   swipeEnabled={false}
@@ -127,7 +107,6 @@ class ZhiHuiDangJianListPage extends Component {
             </View>
 
 
-          </ScrollView>
         </SafeAreaView>
       </>
     )

@@ -12,6 +12,10 @@ import {
 } from 'react-native';
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
+
+
+import XiangCeCell from "../../Cell/CardCell/XiangCeCell"
+
 const { height, width } = Dimensions.get('window');
 class DangJian extends Component{
   constructor(props) {
@@ -29,228 +33,73 @@ class DangJian extends Component{
   {
     return(
       <View style={{flex:1}}>
-        <SafeAreaView>
+        <SafeAreaView style={{height:"100%"}}>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={{backgroundColor:"#E3E3E3",alignItems:"center",paddingBottom:64}}>
               <View style={{flexDirection:"row",flexWrap:"wrap"}}>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
 
-              <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                <View style={{maxHeight:100,width:"100%"}}>
-                  <Image style={{ height: "100%", width: "100%",  }}
-                         source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                  />
-                </View>
 
-                <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                  10月党建“基本理论和光荣传统教育”活动相册
-                </Text>
-                <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                  2019-10-21
-                </Text>
-              </View>
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic1.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic2.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic3.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic4.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic5.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic6.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
+                <XiangCeCell
+                  {...this.props}
+                  image={{uri:'http://app.jzdzsw.cn/dtest/news_pic/news_pic7.jpg'}}
+                  title={"10月党建“基本理论和光荣传统教育”活动相册"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党建相册详情页.html',title:"党建相册"}}
+                  routeName={"WebDetail"}
+                />
 
-              </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
 
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
 
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ height: "100%", width: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      10月党建“基本理论和光荣传统教育”活动相册
-                    </Text>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
               </View>
             </View>
            

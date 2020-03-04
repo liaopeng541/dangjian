@@ -13,6 +13,8 @@ import {
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
 const { height, width } = Dimensions.get('window');
+import NavBar from "../../Cell/NavBar/NavBar"
+import FaZhanDangYuanCell from "../../Cell/AppBottom/FaZhanDangYuanCell"
 class FaZhanDangYuan extends Component{
   constructor(props) {
     super(props);
@@ -29,35 +31,13 @@ class FaZhanDangYuan extends Component{
   {
     return(
       <View style={{flex:1,backgroundColor:"#ffffff"}}>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"发展党员"}
+            rightImage={require('../../../assets/images/user/more.png')}
 
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>发展党员</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/user/more.png')}
-
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
+          />
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
@@ -71,118 +51,79 @@ class FaZhanDangYuan extends Component{
             </View>
 
             <View style={{flexDirection:"row",flexWrap:"wrap",padding:8,backgroundColor:"#ffffff"}}>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
+                />
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
+              />
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
+              />
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
+              />
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
 
-                </View>
-              </View>
-              <View style={{width:"25%",alignItems:"center",justifyContent:"center"}}>
-                <View style={{width:80,height:140,alignItems:"center",justifyContent:"center",margin:4}}>
-                  <View style={{height:95,width:80,backgroundColor:"#eeeeee"}}>
 
-                  </View>
-                  <Text style={{marginTop:4,color:"#333333",fontSize:14,lineHeight:20}}>
-                    姓名
-                  </Text>
-                  <Text style={{marginTop:4,color:"#999999",fontSize:12,lineHeight:17}}>
-                    职务
-                  </Text>
+              />
+              <FaZhanDangYuanCell
+                {...this.props}
+                title={"姓名"}
+                desc={"职务"}
+                routeName={"FaZhanDangYuan_Detail"}
 
-                </View>
-              </View>
+
+
+              /><FaZhanDangYuanCell
+              {...this.props}
+              title={"姓名"}
+              desc={"职务"}
+              routeName={"FaZhanDangYuan_Detail"}
+
+
+
+            /><FaZhanDangYuanCell
+              {...this.props}
+              title={"姓名"}
+              desc={"职务"}
+              routeName={"FaZhanDangYuan_Detail"}
+
+
+
+            />
+
+
+
 
 
 

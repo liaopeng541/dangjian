@@ -13,6 +13,7 @@ import {
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
 const { height, width } = Dimensions.get('window');
+import ZhuanTiCell from "../../Cell/CardCell/ZhuanTiCell"
 class ZhuanTi extends Component{
   constructor(props) {
     super(props);
@@ -28,51 +29,41 @@ class ZhuanTi extends Component{
   render()
   {
     return(
-      <View style={{flex:1}}>
-        <SafeAreaView>
+
+        <SafeAreaView style={{height:"100%"}}>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-            <View style={{backgroundColor:"#E3E3E3",alignItems:"center"}}>
-              <View style={{height:220,backgroundColor:"#ffffff",marginTop:15,width:"94%",padding:10}}>
-                <View style={{height:120}}>
-                  <Image style={{ height: "100%", width: "100%",  }}
-                         source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                  />
-                </View>
-                <Text numberOfLines={1} style={{fontSize:16,lineHeight:22,color:"#333333",marginTop:10}}>
-                  两学一做
-                </Text>
-                <Text numberOfLines={2} style={{fontSize:14,lineHeight:22,color:"#999999"}}>
-                  三大保障类别，全方位守护您的财富和家庭全方位守护您的财富和家庭
-                </Text>
-              </View>
-              <View style={{height:220,backgroundColor:"#ffffff",marginTop:15,width:"94%",padding:10}}>
-                <View style={{height:120}}>
-                  <Image style={{ height: "100%", width: "100%",  }}
-                         source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                  />
-                </View>
-                <Text numberOfLines={1} style={{fontSize:16,lineHeight:22,color:"#333333",marginTop:10}}>
-                  两学一做
-                </Text>
-                <Text numberOfLines={2} style={{fontSize:14,lineHeight:22,color:"#999999"}}>
-                  三大保障类别，全方位守护您的财富和家庭全方位守护您的财富和家庭
-                </Text>
-              </View>
-              <View style={{height:220,backgroundColor:"#ffffff",marginTop:15,width:"94%",padding:10}}>
-                <View style={{height:120}}>
-                  <Image style={{ height: "100%", width: "100%",  }}
-                         source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                  />
-                </View>
-                <Text numberOfLines={1} style={{fontSize:16,lineHeight:22,color:"#333333",marginTop:10}}>
-                  两学一做
-                </Text>
-                <Text numberOfLines={2} style={{fontSize:14,lineHeight:22,color:"#999999"}}>
-                  三大保障类别，全方位守护您的财富和家庭全方位守护您的财富和家庭
-                </Text>
-              </View>
+            <View style={{backgroundColor:"#E3E3E3",alignItems:"center",paddingBottom:100}}>
+              <ZhuanTiCell
+                {...this.props}
+                image={{uri:"http://app.jzdzsw.cn/dtest/zt_pic/zt_1.jpeg"}}
+                title={"两学一做"}
+                desc={"学党章党规、学系列讲话，做合格党员"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"专题详情"}}
+                routeName={"ZhiHuiDangJianListPage"}
+              />
+
+              <ZhuanTiCell
+                {...this.props}
+                image={{uri:"http://app.jzdzsw.cn/dtest/zt_pic/zt_2.jpg"}}
+                title={"齐心协力战疫情"}
+                desc={"齐心协力 共抗疫情"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"专题详情"}}
+                routeName={"ZhiHuiDangJianListPage"}
+              />
+
+              <ZhuanTiCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"不忘初心 牢记使命"}
+                desc={"中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"专题详情"}}
+                routeName={"ZhiHuiDangJianListPage"}
+              />
+
+
+
 
             </View>
            
@@ -85,7 +76,7 @@ class ZhuanTi extends Component{
 
           </ScrollView>
         </SafeAreaView>
-      </View>
+
     )
   }
 }

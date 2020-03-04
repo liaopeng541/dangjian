@@ -18,7 +18,7 @@ import FaZhanLiuCheng from "../tabPage/FaZhanLiuCheng"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 
 const {height, width} = Dimensions.get('window');
-
+import NavBar from "../../Cell/NavBar/NavBar"
 class FaZhanDangYuan_Detail extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +39,9 @@ class FaZhanDangYuan_Detail extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <JiBengXingXi/>;
+        return <JiBengXingXi {...this.props}/>;
       case '200':
-        return <FaZhanLiuCheng/>;
+        return <FaZhanLiuCheng {...this.props}/>;
     }
   }
 
@@ -69,39 +69,17 @@ class FaZhanDangYuan_Detail extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"发展党员"}
+            rightImage={require('../../../assets/images/user/more.png')}
 
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>智慧党建</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/user/more.png')}
-
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
-          <View
+          />
+          <ImageBackground
+            source={require('../../../assets/images/page_bg/dangyunxiangqing.png')}
             style={{
               height: 100,
-              backgroundColor: "#484A54",
               paddingLeft: 19,
               paddingRight: 19,
               flexDirection: "row"
@@ -114,13 +92,19 @@ class FaZhanDangYuan_Detail extends Component {
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                borderWidth:3,
+                borderColor:"#999999"
               }}>
-                <Image style={{height: 30, width: 30}}
-                       source={require('../../../assets/images/user/avatar.png')}
+                {true?<Image style={{height: "100%", width: "100%"}}
+                             source={{uri:"http://app.jzdzsw.cn/dtest/dangyuan/12黄霞.jpg"}}
 
-                       resizeMode={"contain"}
-                />
+                  />:
+                  <Image style={{height: 30, width: 30}}
+                         source={require('../../../assets/images/user/avatar.png')}
+
+
+                  />}
 
 
               </View>
@@ -137,10 +121,9 @@ class FaZhanDangYuan_Detail extends Component {
 
             </View>
 
-          </View>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
+          </ImageBackground>
+
+
             <View style={{backgroundColor: "#E3E3E3"}}>
 
 
@@ -165,16 +148,7 @@ class FaZhanDangYuan_Detail extends Component {
             </View>
 
 
-          </ScrollView>
-          <View style={{bottom:22,left:0,right:0,height:64,width:"100%",zIndex:100,alignItems:"center",justifyContent:"center"}}>
-            <View style={{width:343,height:44,backgroundColor:"#cc0808",alignItems:"center",justifyContent:"center"}}>
-              <Text style={{fontSize:18,color:"#ffffff"}}>
-                我要交费
-              </Text>
 
-            </View>
-
-          </View>
         </SafeAreaView>
       </>
     )

@@ -13,6 +13,9 @@ import {
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
 const { height, width } = Dimensions.get('window');
+
+import ImageListCell from "../../Cell/ImageButtonCell/ImageListCell"
+import NavBar from "../../Cell/NavBar/NavBar"
 class SanZhiYiKa extends Component{
   constructor(props) {
     super(props);
@@ -29,35 +32,16 @@ class SanZhiYiKa extends Component{
   {
     return(
       <View style={{flex:1,backgroundColor:"#ffffff"}}>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            leftImage={require('../../../assets/images/nav/left.png')}
 
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>三制一卡</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/user/more.png')}
-
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
+            title={"三制一卡"}
+            routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"基本情况及目标要求"}}
+            routeName={"WebDetail"}
+            rightImage={require('../../../assets/images/user/more.png')}
+          />
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
@@ -67,132 +51,55 @@ class SanZhiYiKa extends Component{
                        source={require('../../../assets/images/test/shyk.png')}
                 />
               </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    基本情况及目标要求
-                  </Text>
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu1.png')}
+                leftTitle={"基本情况及目标要求"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"基本情况及目标要求"}}
+                routeName={"WebDetail"}
 
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
+              />
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu6.png')}
+                leftTitle={"党支部承诺书"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"党支部承诺书"}}
+                routeName={"WebDetail"}
 
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
+              />
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu2.png')}
+                leftTitle={"党建责任制"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"党建责任制"}}
+                routeName={"WebDetail"}
 
+              />
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu3.png')}
+                leftTitle={"公开承诺制"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"公开承诺制"}}
+                routeName={"WebDetail"}
 
-              </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    党支部承诺书
-                  </Text>
+              />
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu4.png')}
+                leftTitle={"考核评价制"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/三制一卡_支部承诺书.html',title:"考核评价制"}}
+                routeName={"WebDetail"}
 
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
+              />
+              <ImageListCell
+                {...this.props}
+                image={require('../../../assets/images/index_menu/menu5.png')}
+                leftTitle={"党员承诺行动卡"}
+                routeName={"ChengLuoKa"}
 
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
-
-
-              </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    党建责任制
-                  </Text>
-
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
-
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
+              />
 
 
-              </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    公开承诺制
-                  </Text>
-
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
-
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
-
-
-              </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    考核评价制
-                  </Text>
-
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
-
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
-
-
-              </View>
-              <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",borderBottomWidth:1,borderBottomColor:"#eeeeee"}}>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                  <Image style={{ height: 24, width: 24, }}
-                         source={require('../../../assets/images/index_menu/menu1.png')}
-                  />
-                  <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                    党员承诺行动卡
-                  </Text>
-
-                </View>
-                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                  <Text style={{fontSize:16,color:"#999999"}}>
-
-                  </Text>
-                  <Image style={{ height: 13, width: 13, marginLeft:5}}
-                         source={require('../../../assets/images/other/right.png')}
-                  />
-                </View>
-
-
-              </View>
 
             </View>
            

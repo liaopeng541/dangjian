@@ -18,7 +18,7 @@ import XueXiChengGuo from "./tabPage/YiShiXingTai/XueXiChengGuo"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 
 const {height, width} = Dimensions.get('window');
-
+import NavBar from "./Cell/NavBar/NavBar"
 class YiShiXingTai extends Component {
   constructor(props) {
     super(props);
@@ -41,13 +41,13 @@ class YiShiXingTai extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <LiLunXueXi/>;
+        return <LiLunXueXi {...this.props}/>;
       case '200':
-        return <XueXiChengGuo/>;
+        return <XueXiChengGuo {...this.props}/>;
       case '300':
-        return <XueXiChengGuo/>;
+        return <XueXiChengGuo {...this.props}/>;
       case '400':
-        return <XueXiChengGuo/>;
+        return <XueXiChengGuo {...this.props}/>;
     }
   }
 
@@ -75,38 +75,46 @@ class YiShiXingTai extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            leftImage={false}
+            title={"意识形态"}
+            leftComponentName={"ZhiHuiDangJianListPage"}
+            rightComponentName={"User"}
+            rightTitle={"我的"}
+            rightImage={require('../assets/images/nav/user.png')}
+          />
+          {/*<View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>*/}
+            {/*<View style={{height: 44, alignItems: "center", flexDirection: "row",}}>*/}
+              {/*<View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>*/}
 
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>意识形态</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}>我的</Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../assets/images/nav/user.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <View style={{paddingBottom: 100, backgroundColor: "#E3E3E3"}}>
+              {/*</View>*/}
+              {/*<View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 16}}>意识形态</Text>*/}
+              {/*</View>*/}
+              {/*<View style={{*/}
+                {/*flex: 1,*/}
+                {/*justifyContent: "flex-end",*/}
+                {/*alignItems: "center",*/}
+                {/*paddingRight: 18,*/}
+                {/*flexDirection: "row"*/}
+              {/*}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 14}}>我的</Text>*/}
+                {/*<Image style={{height: 20, width: 20, marginLeft: 10}}*/}
+                       {/*source={require('../assets/images/nav/user.png')}*/}
+                {/*/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+          {/*</View>*/}
+
+            <View style={{backgroundColor: "#E3E3E3"}}>
               <View style={{height: 155, backgroundColor: "#ffffff", alignItems: "center"}}>
                 <View style={{height: 108, backgroundColor: Config.ThemeColor, width: "100%"}}>
 
                 </View>
                 <View style={{height: 140, width: "90%", bottom: 5, zIndex: 1, position: "absolute"}}>
+
                   <Image style={{height: "100%", width: "100%", borderRadius: 5}}
                          source={require('../assets/images/test/ysxt/t1.png')}
                   />
@@ -116,7 +124,7 @@ class YiShiXingTai extends Component {
               </View>
 
 
-              <View style={{backgroundColor: "#ffffff"}}>
+              <View style={{backgroundColor: "#ffffff",height:height-245}}>
 
                 <TabView
                   swipeEnabled={false}
@@ -136,9 +144,6 @@ class YiShiXingTai extends Component {
 
 
             </View>
-
-
-          </ScrollView>
         </SafeAreaView>
       </>
     )

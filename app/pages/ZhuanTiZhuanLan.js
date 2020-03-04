@@ -18,7 +18,7 @@ import DangJian from "./tabPage/ZhuanTiZhuangLan/DangJian"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 
 const {height, width} = Dimensions.get('window');
-
+import NavBar from "./Cell/NavBar/NavBar"
 class ZhuanTiZhuanLan extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +39,9 @@ class ZhuanTiZhuanLan extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <ZhuanTi/>;
+        return <ZhuanTi {...this.props}/>;
       case '200':
-        return <DangJian/>;
+        return <DangJian {...this.props}/>;
     }
   }
 
@@ -69,33 +69,40 @@ class ZhuanTiZhuanLan extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            leftImage={false}
+            title={"专题专栏"}
+            leftComponentName={"ZhiHuiDangJianListPage"}
+            rightComponentName={"User"}
+            rightTitle={"我的"}
+            rightImage={require('../assets/images/nav/user.png')}
+          />
+          {/*<View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>*/}
+            {/*<View style={{height: 44, alignItems: "center", flexDirection: "row",}}>*/}
+              {/*<View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>*/}
 
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>专题专栏</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}>我的</Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../assets/images/nav/user.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <View style={{paddingBottom: 100, backgroundColor: "#E3E3E3"}}>
+              {/*</View>*/}
+              {/*<View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 16}}>专题专栏</Text>*/}
+              {/*</View>*/}
+              {/*<View style={{*/}
+                {/*flex: 1,*/}
+                {/*justifyContent: "flex-end",*/}
+                {/*alignItems: "center",*/}
+                {/*paddingRight: 18,*/}
+                {/*flexDirection: "row"*/}
+              {/*}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 14}}>我的</Text>*/}
+                {/*<Image style={{height: 20, width: 20, marginLeft: 10}}*/}
+                       {/*source={require('../assets/images/nav/user.png')}*/}
+                {/*/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+          {/*</View>*/}
+
+            <View style={{backgroundColor: "#E3E3E3",height:height-74}}>
 
 
                 <TabView
@@ -117,7 +124,7 @@ class ZhuanTiZhuanLan extends Component {
             </View>
 
 
-          </ScrollView>
+
         </SafeAreaView>
       </>
     )

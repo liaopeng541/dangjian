@@ -32,7 +32,7 @@ class Home extends Component{
   {
     return(
       <>
-        <SafeAreaView>
+        <SafeAreaView style={{height:"100%"}}>
           <View style={{paddingTop:20,backgroundColor:Config.ThemeColor}}>
             <View style={{height:44,alignItems:"center",flexDirection:"row",}}>
             <View style={{flex:1,justifyContent:"center",paddingLeft:18}}>

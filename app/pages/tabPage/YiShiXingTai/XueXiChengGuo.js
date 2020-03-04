@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
+import WzCell from "../../Cell/ImageWzCell/WzCell"
 const { height, width } = Dimensions.get('window');
 class XueXiChengGuo extends Component{
   constructor(props) {
@@ -29,97 +30,85 @@ class XueXiChengGuo extends Component{
   {
     return(
       <>
-        <SafeAreaView>
+        <SafeAreaView style={{height:"100%"}}>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={{backgroundColor:"#E3E3E3"}}>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View><View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-              <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-              </Text>
-              <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                2020-01-23
-              </Text>
-            </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View>
-              <View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-                <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                  深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-                </Text>
-                <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                  2020-01-23
-                </Text>
-              </View><View style={{height:80,marginBottom:1,backgroundColor:"#ffffff",paddingLeft:20,paddingRight:20,justifyContent:"center"}}>
-              <Text style={{color:"#333333",fontSize:16,lineHeight:22}}>
-                深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性
-              </Text>
-              <Text style={{color:"#999999",fontSize:12,lineHeight:17,marginTop:5}}>
-                2020-01-23
-              </Text>
-            </View>
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+              <WzCell
+                {...this.props}
+                image={require('../../../assets/images/test/lunbo/lunbo1.png')}
+                title={"深刻认识党建工作的极端重要性深刻认识党建工作的极端重要性"}
+                titleSize={13}
+                desc={"2019-5-3  13:00"}
+                routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"资讯详情"}}
+                routeName={"WebDetail"}
+              />
+
+
 
 
 

@@ -44,7 +44,7 @@ class JiBengXingXi extends Component{
 
                 <View>
                   <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    男
+                    女
                   </Text>
                 </View>
               </View>

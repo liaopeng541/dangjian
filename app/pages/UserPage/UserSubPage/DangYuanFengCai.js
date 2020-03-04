@@ -13,6 +13,8 @@ import {
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
 const { height, width } = Dimensions.get('window');
+import NavBar from "../../Cell/NavBar/NavBar"
+import DanYuanFengCaiCell from "../../Cell/AppBottom/DanYuanFengCaiCell"
 class DangYuanFengCai extends Component{
   constructor(props) {
     super(props);
@@ -29,217 +31,84 @@ class DangYuanFengCai extends Component{
   {
     return(
       <View style={{flex:1}}>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
-
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>党员风采</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/user/more.png')}
-
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"党员风采"}
+            rightImage={require('../../../assets/images/user/more.png')}
+          />
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={{backgroundColor:"#E3E3E3",alignItems:"center",paddingBottom:64}}>
               <View style={{flexDirection:"row",flexWrap:"wrap"}}>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic1.jpg"}}
+                  title={"不忘初心强体魄 牢记使命展风采"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic2.jpg"}}
+                  title={"党组书记、主任翟辉走访慰问贫困户宋开双"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic3.jpg"}}
+                  title={"关于对姚敦凡等9名同志进行表扬的通报"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic4.jpg"}}
+                  title={"脱贫路上担使命 服务民生显初心"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic5.jpg"}}
+                  title={"不遗余力助教育 精心谋划兴产业"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic6.jpg"}}
+                  title={"不遗余力助教育 精心谋划兴产业"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic7.jpg"}}
+                  title={"不遗余力助教育 精心谋划兴产业"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
+                <DanYuanFengCaiCell
+                  {...this.props}
+                  image={{uri:"http://app.jzdzsw.cn/dtest/news_pic/news_pic8.jpg"}}
+                  title={"不遗余力助教育 精心谋划兴产业"}
+                  desc={"2019-10-21"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/党员风采.html',title:"党员档案"}}
+                  routeName={"WebDetail"}
+                />
 
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
 
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
 
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View><View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                  <View style={{maxHeight:100,width:"100%"}}>
-                    <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                           source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                    />
-                  </View>
-
-                  <View style={{height:40,justifyContent:"center"}}>
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      杨炎
-                    </Text>
-                  </View>
-                  <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                    2019-10-21
-                  </Text>
-                </View>
-
-              </View><View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                  <View style={{maxHeight:100,width:"100%"}}>
-                    <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                           source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                    />
-                  </View>
-
-                  <View style={{height:40,justifyContent:"center"}}>
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      杨炎
-                    </Text>
-                  </View>
-                  <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                    2019-10-21
-                  </Text>
-                </View>
-
-              </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View><View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                  <View style={{maxHeight:100,width:"100%"}}>
-                    <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                           source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                    />
-                  </View>
-
-                  <View style={{height:40,justifyContent:"center"}}>
-                    <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                      杨炎
-                    </Text>
-                  </View>
-                  <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                    2019-10-21
-                  </Text>
-                </View>
-
-              </View>
-                <View style={{width:"50%",marginTop:15,alignItems:"center",justifyContent:"center"}}>
-
-                  <View style={{height:180,backgroundColor:"#ffffff",padding:10,width:"90%"}}>
-                    <View style={{maxHeight:100,width:"100%"}}>
-                      <Image style={{ maxHeight: "100%", maxWidth: "100%",  }}
-                             source={require('../../../assets/images/test/lunbo/lunbo1.png')}
-                      />
-                    </View>
-
-                    <View style={{height:40,justifyContent:"center"}}>
-                      <Text numberOfLines={2} style={{fontSize:12,lineHeight:20,color:"#333333",marginTop:6}}>
-                        杨炎
-                      </Text>
-                    </View>
-                    <Text numberOfLines={1} style={{fontSize:12,lineHeight:21,color:"#999999"}}>
-                      2019-10-21
-                    </Text>
-                  </View>
-
-                </View>
 
 
 

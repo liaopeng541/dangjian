@@ -13,6 +13,7 @@ import {
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
 const { height, width } = Dimensions.get('window');
+import NavBar from "../../Cell/NavBar/NavBar"
 class DangYuanFengCai extends Component{
   constructor(props) {
     super(props);
@@ -29,7 +30,7 @@ class DangYuanFengCai extends Component{
   {
     return(
       <View style={{flex:1,backgroundColor:"#ffffff"}}>
-        <SafeAreaView>
+        <SafeAreaView style={{height:"100%"}}>
           <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
             <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
               <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>

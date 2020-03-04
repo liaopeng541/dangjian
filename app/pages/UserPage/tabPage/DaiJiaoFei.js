@@ -8,7 +8,7 @@ import {
   StatusBar,
   Dimensions,
   Image,
-  ImageBackground
+  TouchableWithoutFeedback
 } from 'react-native';
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
@@ -24,6 +24,10 @@ class DangYuanDaHui extends Component{
   {
 
     console.log(this.props)
+  }
+  toPay()
+  {
+    this.props.navigation.navigate("DangFeiJiaoNa_Pay")
   }
   render()
   {
@@ -155,6 +159,17 @@ class DangYuanDaHui extends Component{
 
 
           </ScrollView>
+          <TouchableWithoutFeedback onPress={this.toPay.bind(this)}>
+          <View style={{bottom:0,left:0,right:0,height:64,width:"100%",zIndex:100,alignItems:"center",justifyContent:"center"}}>
+            <View style={{width:343,height:44,backgroundColor:"#cc0808",alignItems:"center",justifyContent:"center"}}>
+              <Text style={{fontSize:18,color:"#ffffff"}}>
+                我要交费
+              </Text>
+
+            </View>
+
+          </View>
+          </TouchableWithoutFeedback>
         </SafeAreaView>
       </>
     )

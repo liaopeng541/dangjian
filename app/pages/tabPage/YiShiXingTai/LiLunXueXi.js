@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
+import  BookImage from "../../Cell/ImageButtonCell/BookImage"
+import  ImageListCell from "../../Cell/ImageButtonCell/ImageListCell"
 const { height, width } = Dimensions.get('window');
 class LiLunXueXi extends Component{
   constructor(props) {
@@ -29,89 +31,50 @@ class LiLunXueXi extends Component{
   {
     return(
       <>
-        <SafeAreaView>
+        <SafeAreaView style={{height:"100%"}}>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={{backgroundColor:"#E3E3E3"}}>
               <View style={{backgroundColor: "#ffffff", marginBottom: 1}}>
-                <ScrollView>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                   <View style={{flexDirection: "row", height: 108,paddingTop:16,paddingBottom:16}}>
-                    <View style={{alignItems:"center",justifyContent:"center",width:108}}>
-                      <View>
-                        <Image style={{height: 60, width: 80,}}
-                               source={require('../../../assets/images/test/ysxt/t1.png')}
-                        />
-                      </View>
-                      <View style={{height:20,marginTop:2}}>
-                        <Text numberOfLines={1} style={{color: "#999999", fontSize: 14,lineHeight:20}}>
-                          党章
+                    <BookImage
+                      {...this.props}
+                      image={{uri:"http://app.jzdzsw.cn/dtest/study_pic/s_1.jpeg"}}
+                      title={"党章"}
+                      routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"理论学习"}}
+                      routeName={"DangJianYueLanShi"}
+                    />
+                    <BookImage
+                      {...this.props}
+                      image={{uri:"http://app.jzdzsw.cn/dtest/study_pic/s_2.jpeg"}}
+                      title={"政策法规"}
+                      routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"理论学习"}}
+                      routeName={"DangJianYueLanShi"}
+                    />
+                    <BookImage
+                      {...this.props}
+                      image={{uri:"http://app.jzdzsw.cn/dtest/study_pic/s_3.jpg"}}
+                      title={"政策法规"}
+                      routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"理论学习"}}
+                      routeName={"DangJianYueLanShi"}
+                    />
+                    <BookImage
+                      {...this.props}
+                      image={{uri:"http://app.jzdzsw.cn/dtest/study_pic/s_4.jpg"}}
+                      title={"政策法规"}
+                      routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"理论学习"}}
+                      routeName={"DangJianYueLanShi"}
+                    />
+                    <BookImage
+                      {...this.props}
+                      image={{uri:"http://app.jzdzsw.cn/dtest/study_pic/s_5.jpg"}}
+                      title={"政策法规"}
+                      routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"组织信息"}}
+                      routeName={"DangJianYueLanShi"}
+                    />
 
-                        </Text>
-                      </View>
-
-
-                    </View>
-                    <View style={{alignItems:"center",justifyContent:"center",width:108}}>
-                      <View>
-                        <Image style={{height: 60, width: 80,}}
-                               source={require('../../../assets/images/test/ysxt/t1.png')}
-                        />
-                      </View>
-                      <View style={{height:20,marginTop:2}}>
-                        <Text numberOfLines={1} style={{color: "#999999", fontSize: 14,lineHeight:20}}>
-                          政策法规
-
-                        </Text>
-                      </View>
-
-
-                    </View>
-                    <View style={{alignItems:"center",justifyContent:"center",width:108}}>
-                      <View>
-                        <Image style={{height: 60, width: 80,}}
-                               source={require('../../../assets/images/test/ysxt/t1.png')}
-                        />
-                      </View>
-                      <View style={{height:20,marginTop:2}}>
-                        <Text numberOfLines={1} style={{color: "#999999", fontSize: 14,lineHeight:20}}>
-                          党史资料
-
-                        </Text>
-                      </View>
-
-
-                    </View>
-                    <View style={{alignItems:"center",justifyContent:"center",width:108}}>
-                      <View>
-                        <Image style={{height: 60, width: 80,}}
-                               source={require('../../../assets/images/test/ysxt/t1.png')}
-                        />
-                      </View>
-                      <View style={{height:20,marginTop:2}}>
-                        <Text numberOfLines={1} style={{color: "#999999", fontSize: 14,lineHeight:20}}>
-                          党章
-
-                        </Text>
-                      </View>
-
-
-                    </View>
-                    <View style={{alignItems:"center",justifyContent:"center",width:108}}>
-                      <View>
-                        <Image style={{height: 60, width: 80,}}
-                               source={require('../../../assets/images/test/ysxt/t1.png')}
-                        />
-                      </View>
-                      <View style={{height:20,marginTop:2}}>
-                        <Text numberOfLines={1} style={{color: "#999999", fontSize: 14,lineHeight:20}}>
-                          党章
-
-                        </Text>
-                      </View>
-
-
-                    </View>
 
                   </View>
 
@@ -122,111 +85,48 @@ class LiLunXueXi extends Component{
               </View>
 
               <View>
-                <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",marginBottom:1}}>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                    <Image style={{ height: 24, width: 24, }}
-                           source={require('../../../assets/images/index_menu/menu1.png')}
-                    />
-                    <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                      中心组学习
-                    </Text>
+                <ImageListCell
+                  {...this.props}
+                  image={require('../../../assets/images/index_menu/menu1.png')}
+                  leftTitle={"中心组学习"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"中心组学习 "}}
+                  routeName={"WebDetail"}
 
-                  </View>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                    <Text style={{fontSize:16,color:"#999999"}}>
+                />
+                <ImageListCell
+                  {...this.props}
+                  image={require('../../../assets/images/index_menu/menu2.png')}
+                  leftTitle={"周五学习"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"周五学习"}}
+                  routeName={"WebDetail"}
 
-                    </Text>
-                    <Image style={{ height: 13, width: 13, marginLeft:5}}
-                           source={require('../../../assets/images/other/right.png')}
-                    />
-                  </View>
+                />
 
+                <ImageListCell
+                  {...this.props}
+                  image={require('../../../assets/images/index_menu/menu3.png')}
+                  leftTitle={"党支部学习"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"党支部学习"}}
+                  routeName={"WebDetail"}
 
-                </View>
-                <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",marginBottom:1}}>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                    <Image style={{ height: 24, width: 24, }}
-                           source={require('../../../assets/images/index_menu/menu1.png')}
-                    />
-                    <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                      周五学习
-                    </Text>
+                />
+                <ImageListCell
+                  {...this.props}
+                  image={require('../../../assets/images/index_menu/menu4.png')}
+                  leftTitle={"党小组学习"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"党小组学习"}}
+                  routeName={"WebDetail"}
 
-                  </View>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                    <Text style={{fontSize:16,color:"#999999"}}>
+                />
+                <ImageListCell
+                  {...this.props}
+                  image={require('../../../assets/images/index_menu/menu5.png')}
+                  leftTitle={"中心组学习"}
+                  routeParams={{uri:'http://app.jzdzsw.cn/dtest/新闻资讯.html',title:"中心组学习"}}
+                  routeName={"WebDetail"}
 
-                    </Text>
-                    <Image style={{ height: 13, width: 13, marginLeft:5}}
-                           source={require('../../../assets/images/other/right.png')}
-                    />
-                  </View>
+                />
 
-
-                </View>
-                <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",marginBottom:1}}>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                    <Image style={{ height: 24, width: 24, }}
-                           source={require('../../../assets/images/index_menu/menu1.png')}
-                    />
-                    <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                      党支部学习
-                    </Text>
-
-                  </View>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                    <Text style={{fontSize:16,color:"#999999"}}>
-
-                    </Text>
-                    <Image style={{ height: 13, width: 13, marginLeft:5}}
-                           source={require('../../../assets/images/other/right.png')}
-                    />
-                  </View>
-
-
-                </View>
-                <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",marginBottom:1}}>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                    <Image style={{ height: 24, width: 24, }}
-                           source={require('../../../assets/images/index_menu/menu1.png')}
-                    />
-                    <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                      党小组学习
-                    </Text>
-
-                  </View>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                    <Text style={{fontSize:16,color:"#999999"}}>
-
-                    </Text>
-                    <Image style={{ height: 13, width: 13, marginLeft:5}}
-                           source={require('../../../assets/images/other/right.png')}
-                    />
-                  </View>
-
-
-                </View>
-                <View style={{flexDirection:"row",height:50,paddingLeft:25,paddingRight:25,backgroundColor:"#ffffff",marginBottom:1}}>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center"}}>
-                    <Image style={{ height: 24, width: 24, }}
-                           source={require('../../../assets/images/index_menu/menu1.png')}
-                    />
-                    <Text style={{fontSize:17,color:"#333333",marginLeft:5}}>
-                      中心组学习
-                    </Text>
-
-                  </View>
-                  <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"flex-end"}}>
-                    <Text style={{fontSize:16,color:"#999999"}}>
-
-                    </Text>
-                    <Image style={{ height: 13, width: 13, marginLeft:5}}
-                           source={require('../../../assets/images/other/right.png')}
-                    />
-                  </View>
-
-
-                </View>
               </View>
             </View>
            

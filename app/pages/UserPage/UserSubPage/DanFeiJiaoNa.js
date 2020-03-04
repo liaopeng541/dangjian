@@ -18,7 +18,7 @@ import YiJiaoFei from "../tabPage/YiJiaoFei"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 
 const {height, width} = Dimensions.get('window');
-
+import NavBar from "../../Cell/NavBar/NavBar"
 class DanFeiJiaoNa extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +39,9 @@ class DanFeiJiaoNa extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <DaiJiaoFei/>;
+        return <DaiJiaoFei {...this.props}/>;
       case '200':
-        return <YiJiaoFei/>;
+        return <YiJiaoFei {...this.props}/>;
     }
   }
 
@@ -69,35 +69,41 @@ class DanFeiJiaoNa extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"智慧党建"}
+            rightComponentName={"User"}
+            rightImage={require('../../../assets/images/user/more.png')}
+          />
+          {/*<View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>*/}
+            {/*<View style={{height: 44, alignItems: "center", flexDirection: "row",}}>*/}
+              {/*<View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>*/}
 
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>智慧党建</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/user/more.png')}
+                {/*<Image style={{height: 20, width: 20,}}*/}
+                       {/*source={require('../../../assets/images/nav/left.png')}*/}
+                       {/*resizeMode={"contain"}*/}
+                {/*/>*/}
+              {/*</View>*/}
+              {/*<View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 16}}>智慧党建</Text>*/}
+              {/*</View>*/}
+              {/*<View style={{*/}
+                {/*flex: 1,*/}
+                {/*justifyContent: "flex-end",*/}
+                {/*alignItems: "center",*/}
+                {/*paddingRight: 18,*/}
+                {/*flexDirection: "row"*/}
+              {/*}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 14}}></Text>*/}
+                {/*<Image style={{height: 20, width: 20, marginLeft: 10}}*/}
+                       {/*source={require('../../../assets/images/user/more.png')}*/}
 
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
+                       {/*resizeMode={"contain"}*/}
+                {/*/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+          {/*</View>*/}
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
@@ -105,7 +111,7 @@ class DanFeiJiaoNa extends Component {
 
 
 
-              <View style={{backgroundColor: "#ffffff",height:height-64}}>
+              <View style={{backgroundColor: "#ffffff",height:height-74}}>
                 <TabView
                   swipeEnabled={false}
                   navigationState={{ index, routes }}
@@ -126,15 +132,7 @@ class DanFeiJiaoNa extends Component {
 
 
           </ScrollView>
-          <View style={{bottom:22,left:0,right:0,height:64,width:"100%",zIndex:100,alignItems:"center",justifyContent:"center"}}>
-            <View style={{width:343,height:44,backgroundColor:"#cc0808",alignItems:"center",justifyContent:"center"}}>
-              <Text style={{fontSize:18,color:"#ffffff"}}>
-                我要交费
-              </Text>
 
-            </View>
-
-          </View>
         </SafeAreaView>
       </>
     )

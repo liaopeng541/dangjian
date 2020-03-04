@@ -16,7 +16,7 @@ import Config from "../../../config/Config"
 import JiBengXingXi from "../tabPage/JiBengXingXi"
 import FaZhanLiuCheng from "../tabPage/FaZhanLiuCheng"
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
-
+import NavBar from "../../Cell/NavBar/NavBar"
 const {height, width} = Dimensions.get('window');
 
 class DanANXiangQing extends Component {
@@ -39,9 +39,9 @@ class DanANXiangQing extends Component {
   renderScene({ route, jumpTo }){
     switch (route.key) {
       case '100':
-        return <JiBengXingXi/>;
+        return <JiBengXingXi {...this.props}/>;
       case '200':
-        return <FaZhanLiuCheng/>;
+        return <FaZhanLiuCheng {...this.props}/>;
     }
   }
 
@@ -69,39 +69,43 @@ class DanANXiangQing extends Component {
     const {index,routes}=this.state
     return (
       <>
-        <SafeAreaView>
-          <View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>
-            <View style={{height: 44, alignItems: "center", flexDirection: "row",}}>
-              <View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>
+        <SafeAreaView style={{height:"100%"}}>
+          <NavBar
+            {...this.props}
+            title={"党员档案"}
+          />
+          {/*<View style={{paddingTop: 20, backgroundColor: Config.ThemeColor}}>*/}
+            {/*<View style={{height: 44, alignItems: "center", flexDirection: "row",}}>*/}
+              {/*<View style={{flex: 1, justifyContent: "center", paddingLeft: 18}}>*/}
 
-                <Image style={{height: 20, width: 20,}}
-                       source={require('../../../assets/images/nav/left.png')}
-                       resizeMode={"contain"}
-                />
-              </View>
-              <View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>
-                <Text style={{color: "#ffffff", fontSize: 16}}>党员档案</Text>
-              </View>
-              <View style={{
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                paddingRight: 18,
-                flexDirection: "row"
-              }}>
-                <Text style={{color: "#ffffff", fontSize: 14}}></Text>
-                <Image style={{height: 20, width: 20, marginLeft: 10}}
-                       source={require('../../../assets/images/nav/user.png')}
+                {/*<Image style={{height: 20, width: 20,}}*/}
+                       {/*source={require('../../../assets/images/nav/left.png')}*/}
+                       {/*resizeMode={"contain"}*/}
+                {/*/>*/}
+              {/*</View>*/}
+              {/*<View style={{flex: 2, alignItems: "center", justifyContent: "center"}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 16}}>党员档案</Text>*/}
+              {/*</View>*/}
+              {/*<View style={{*/}
+                {/*flex: 1,*/}
+                {/*justifyContent: "flex-end",*/}
+                {/*alignItems: "center",*/}
+                {/*paddingRight: 18,*/}
+                {/*flexDirection: "row"*/}
+              {/*}}>*/}
+                {/*<Text style={{color: "#ffffff", fontSize: 14}}></Text>*/}
+                {/*<Image style={{height: 20, width: 20, marginLeft: 10}}*/}
+                       {/*source={require('../../../assets/images/nav/user.png')}*/}
 
-                       resizeMode={"contain"}
-                />
-              </View>
-            </View>
-          </View>
-          <View
+                       {/*resizeMode={"contain"}*/}
+                {/*/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+          {/*</View>*/}
+          <ImageBackground
+            source={require('../../../assets/images/page_bg/dangyunxiangqing.png')}
             style={{
               height: 100,
-              backgroundColor: "#484A54",
               paddingLeft: 19,
               paddingRight: 19,
               flexDirection: "row"
@@ -114,13 +118,19 @@ class DanANXiangQing extends Component {
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                borderWidth:3,
+                borderColor:"#999999"
               }}>
-                <Image style={{height: 30, width: 30}}
-                       source={require('../../../assets/images/user/avatar.png')}
+                {true?<Image style={{height: "100%", width: "100%"}}
+                             source={{uri:"http://app.jzdzsw.cn/dtest/dangyuan/12黄霞.jpg"}}
 
-                       resizeMode={"contain"}
-                />
+                  />:
+                  <Image style={{height: 30, width: 30}}
+                         source={require('../../../assets/images/user/avatar.png')}
+
+
+                  />}
 
 
               </View>
@@ -137,11 +147,11 @@ class DanANXiangQing extends Component {
 
             </View>
 
-          </View>
+          </ImageBackground>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-            <View style={{backgroundColor: "#E3E3E3",paddingBottom:200}}>
+            <View style={{backgroundColor: "#E3E3E3"}}>
 
 
               <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
@@ -154,7 +164,7 @@ class DanANXiangQing extends Component {
 
                 <View>
                   <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    男
+                    女
                   </Text>
                 </View>
               </View>

@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import {connect} from "react-redux"
 import Config from "../../../config/Config"
+import { WebView } from 'react-native-webview';
 const { height, width } = Dimensions.get('window');
 class FaZhanLiuCheng extends Component{
   constructor(props) {
@@ -30,121 +31,7 @@ class FaZhanLiuCheng extends Component{
     return(
       <>
         <SafeAreaView style={{backgroundColor:"#F4F4F4",minHeight:"100%"}}>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <View style={{paddingBottom:100}}>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    性别
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    男
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    民族
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    土家族
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    出生年月
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    1976年9月25日
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    籍贯
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    湖南省吉首市
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    学历
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    本科
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    身份证
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    433101197609250511
-                  </Text>
-                </View>
-              </View>
-              <View style={{height:57,borderBottomColor:"#eeeeee",borderBottomWidth:1,backgroundColor:"#ffffff",paddingHorizontal:20,paddingVertical:7}}>
-
-                <View>
-                  <Text style={{fontSize:12,color:"#999999",lineHeight:17}}>
-                    政治面貌
-                  </Text>
-                </View>
-
-                <View>
-                  <Text style={{fontSize:16,color:"#333333",lineHeight:22}} numberOfLines={1}>
-                    无
-                  </Text>
-                </View>
-              </View>
-
-
-
-            </View>
-           
-
-
-
-
-
-
-
-          </ScrollView>
+          <WebView style={{height:"100%",width:"100%"}} source={{ uri:"http://app.jzdzsw.cn/dtest/发展党员.html"}} />
         </SafeAreaView>
       </>
     )
